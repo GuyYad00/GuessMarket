@@ -7,21 +7,21 @@ if "%JAVA_HOME%"=="" set JAVA_HOME=C:\Program Files\Java\jdk-25.0.4.1
 
 echo.
 echo ============================================================
-echo  STEP 1 of 4  -  Compiling and building the jars
+echo  STEP 1 of 5  -  Compiling and building the jars
 echo ============================================================
 call build.bat
 if errorlevel 1 goto failed
 
 echo.
 echo ============================================================
-echo  STEP 2 of 4  -  Rebuilding readme.docx and the submission zip
+echo  STEP 2 of 5  -  Rebuilding readme.docx and the submission zip
 echo ============================================================
 call package.bat
 if errorlevel 1 goto failed
 
 echo.
 echo ============================================================
-echo  STEP 3 of 4  -  Checking every sample file against the schema
+echo  STEP 3 of 5  -  Checking every sample file against the schema
 echo ============================================================
 powershell -ExecutionPolicy Bypass -NoProfile -File "tests\generate-edge-files.ps1"
 if errorlevel 1 goto failed
@@ -30,9 +30,16 @@ if errorlevel 1 goto failed
 
 echo.
 echo ============================================================
-echo  STEP 4 of 4  -  Running the submission zip like the grader
+echo  STEP 4 of 5  -  Running the submission zip like the grader
 echo ============================================================
 powershell -ExecutionPolicy Bypass -NoProfile -File "tests\run-tests.ps1"
+if errorlevel 1 goto failed
+
+echo.
+echo ============================================================
+echo  STEP 5 of 5  -  LMSR pulse-check vs the lecturer's simulator formula
+echo ============================================================
+powershell -ExecutionPolicy Bypass -NoProfile -File "tests\oracle-lmsr.ps1"
 if errorlevel 1 goto failed
 
 echo.

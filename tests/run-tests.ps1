@@ -115,6 +115,31 @@ Test-Case "A10 a good file DOES override the previous one" `
 }
 
 Write-Host ""
+Write-Host "=== A*. The lecturer's own four sample files (exact names) ===" -ForegroundColor Cyan
+
+Test-Case "A*1 multiple.xml (lecturer valid, 3 events) loads" `
+    @("1", (Join-Path $xmlDir "multiple.xml"), "2", "6") @{
+    must = @("loaded successfully", "Mujtaba is Dead", "World Cap Winner", "Earth Quake on Dead Sea")
+    mustNot = @("Error:")
+}
+
+Test-Case "A*2 single.xml (lecturer valid, 1 event) loads" `
+    @("1", (Join-Path $xmlDir "single.xml"), "2", "6") @{
+    must = @("loaded successfully", "Earth Quake on Dead Sea")
+    mustNot = @("Error:")
+}
+
+Test-Case "A*3 error-2.xml (lecturer, commission 115) is refused" `
+    @("1", (Join-Path $xmlDir "error-2.xml"), "6") @{
+    must = @("Error:", "115"); mustNot = @("loaded successfully")
+}
+
+Test-Case "A*4 error-3.xml (lecturer, duplicate id) is refused" `
+    @("1", (Join-Path $xmlDir "error-3.xml"), "6") @{
+    must = @("Error:", "Duplicate event id"); mustNot = @("loaded successfully")
+}
+
+Write-Host ""
 Write-Host "=== B. Commands with no file loaded ===" -ForegroundColor Cyan
 
 foreach ($cmd in @("2", "3", "4", "5", "7")) {
