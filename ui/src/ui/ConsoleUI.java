@@ -31,26 +31,46 @@ public class ConsoleUI {
     public void run() {
         System.out.println("Welcome to Guess Market!");
         boolean exit = false;
-        while (!exit) {
-            printMenu();
-            int choice = readMenuChoice();
-            try {
-                switch (choice) {
-                    case 1 -> loadFileCommand();
-                    case 2 -> showEventsCommand();
-                    case 3 -> showTradeStateCommand();
-                    case 4 -> buySharesCommand();
-                    case 5 -> closeEventCommand();
-                    case 6 -> exit = true;
-                    case 7 -> saveStateCommand();
-                    case 8 -> loadStateCommand();
-                    default -> System.out.println("Error: please choose a number between 1 and 8.");
+        try {
+            while (!exit) {
+                printMenu();
+                int choice = readMenuChoice();
+                try {
+                    switch (choice) {
+                        case 1 -> loadFileCommand();
+                        case 2 -> showEventsCommand();
+                        case 3 -> showTradeStateCommand();
+                        case 4 -> buySharesCommand();
+                        case 5 -> closeEventCommand();
+                        case 6 -> exit = true;
+                        case 7 -> saveStateCommand();
+                        case 8 -> loadStateCommand();
+                        default -> System.out.println("Error: please choose a number between 1 and 8.");
+                    }
+                } catch (InvalidFileException | EngineOperationException e) {
+                    System.out.println("Error: " + e.getMessage());
                 }
-            } catch (InvalidFileException | EngineOperationException e) {
-                System.out.println("Error: " + e.getMessage());
             }
+        } catch (InputClosedException e) {
+            System.out.println();
         }
         System.out.println("Thank you for using Guess Market. Goodbye!");
+    }
+
+    /** Raised when there is no more input to read, so the session has to end. */
+    private static class InputClosedException extends RuntimeException {
+    }
+
+    /**
+     * Reads one line of user input.
+     * If the input stream has been closed there is nothing left to read, so the
+     * session ends quietly instead of failing on an empty scanner.
+     */
+    private String readLine() {
+        if (!scanner.hasNextLine()) {
+            throw new InputClosedException();
+        }
+        return scanner.nextLine().trim();
     }
 
     private void printMenu() {
@@ -69,7 +89,7 @@ public class ConsoleUI {
     }
 
     private int readMenuChoice() {
-        String line = scanner.nextLine().trim();
+        String line = readLine();
         try {
             return Integer.parseInt(line);
         } catch (NumberFormatException e) {
@@ -81,7 +101,7 @@ public class ConsoleUI {
 
     private void loadFileCommand() {
         System.out.print("Please enter the full path of the XML file to load: ");
-        String path = scanner.nextLine().trim();
+        String path = readLine();
         engine.loadFile(path);
         System.out.println("The file was found valid and loaded successfully into the system.");
     }
@@ -235,14 +255,14 @@ public class ConsoleUI {
 
     private void saveStateCommand() {
         System.out.print("Please enter the full path (including file name, without extension) to save to: ");
-        String path = scanner.nextLine().trim();
+        String path = readLine();
         engine.saveState(path);
         System.out.println("The system state was saved successfully.");
     }
 
     private void loadStateCommand() {
         System.out.print("Please enter the full path (including file name, without extension) to load from: ");
-        String path = scanner.nextLine().trim();
+        String path = readLine();
         engine.loadState(path);
         System.out.println("The system state was loaded successfully.");
     }
@@ -265,7 +285,7 @@ public class ConsoleUI {
 
         while (true) {
             System.out.print(prompt + " (event number, or press Enter to return to the menu): ");
-            String line = scanner.nextLine().trim();
+            String line = readLine();
             if (line.isEmpty()) {
                 return null;
             }
@@ -287,7 +307,7 @@ public class ConsoleUI {
     private int readPositiveInt(String prompt, int max) {
         while (true) {
             System.out.print(prompt);
-            String line = scanner.nextLine().trim();
+            String line = readLine();
             if (line.isEmpty()) {
                 return -1;
             }
@@ -307,7 +327,7 @@ public class ConsoleUI {
     private long readPositiveLong(String prompt) {
         while (true) {
             System.out.print(prompt);
-            String line = scanner.nextLine().trim();
+            String line = readLine();
             if (line.isEmpty()) {
                 return -1;
             }

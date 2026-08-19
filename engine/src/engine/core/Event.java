@@ -55,19 +55,32 @@ public class Event implements Serializable {
 
     // --- LMSR math ---
 
-    /** C(q1, q2) = b * ln(e^(q1/b) + e^(q2/b)) */
+    /**
+     * C(q1, q2) = b * ln(e^(q1/b) + e^(q2/b))
+     *
+     * Written as max + b*ln(1 + e^(-|q0-q1|/b)) instead of the formula as-is.
+     * Both give the same result, but e^(q/b) overflows to infinity once q/b gets
+     * past ~709, which would make a large purchase print "Infinity". Subtracting
+     * the larger term first keeps every exponent at zero or below.
+     */
     private double costFunction(double q0, double q1) {
-        return liquidity * Math.log(Math.exp(q0 / liquidity) + Math.exp(q1 / liquidity));
+        double larger = Math.max(q0, q1);
+        double gap = Math.abs(q0 - q1);
+        return larger + liquidity * Math.log(1 + Math.exp(-gap / liquidity));
     }
 
-    /** Current price (probability, 0..1) of the option at the given index. */
+    /**
+     * Current price (probability, 0..1) of the option at the given index.
+     *
+     * p = e^(q/b) / (e^(q0/b) + e^(q1/b)), rearranged to 1 / (1 + e^((other-q)/b))
+     * for the same overflow reason described on the cost function.
+     */
     public double getOptionPrice(int optionIndex) {
         double q0 = options.get(0).getTotalSharesBought();
         double q1 = options.get(1).getTotalSharesBought();
-        double e0 = Math.exp(q0 / liquidity);
-        double e1 = Math.exp(q1 / liquidity);
-        double target = (optionIndex == 0) ? e0 : e1;
-        return target / (e0 + e1);
+        double mine = (optionIndex == 0) ? q0 : q1;
+        double other = (optionIndex == 0) ? q1 : q0;
+        return 1.0 / (1.0 + Math.exp((other - mine) / liquidity));
     }
 
     /** The initial subsidy the MM invests when the event is created: C(0,0) = b*ln(2). */
@@ -86,6 +99,11 @@ public class Event implements Serializable {
         requireActive("buy shares in");
         if (amount <= 0) {
             throw new EngineOperationException("The number of shares to buy must be a positive number (got " + amount + ").");
+        }
+        long alreadyBought = options.get(optionIndex).getTotalSharesBought();
+        if (alreadyBought > Long.MAX_VALUE - amount) {
+            throw new EngineOperationException("Buying " + amount
+                    + " more shares would exceed the maximum number of shares this option can hold.");
         }
 
         double q0 = options.get(0).getTotalSharesBought();
