@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Guess-Market xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GM-EX1-schema.xsd">
+	<GM-events>
+		<GM-event name="Event 1">
+			<id>1</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 2">
+			<id>2</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 3">
+			<id>3</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 4">
+			<id>4</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 5">
+			<id>5</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 6">
+			<id>6</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 7">
+			<id>7</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 8">
+			<id>8</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 9">
+			<id>9</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 10">
+			<id>10</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 11">
+			<id>11</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 12">
+			<id>12</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 13">
+			<id>13</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 14">
+			<id>14</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 15">
+			<id>15</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 16">
+			<id>16</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 17">
+			<id>17</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 18">
+			<id>18</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 19">
+			<id>19</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 20">
+			<id>20</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 21">
+			<id>21</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 22">
+			<id>22</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 23">
+			<id>23</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 24">
+			<id>24</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 25">
+			<id>25</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 26">
+			<id>26</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 27">
+			<id>27</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 28">
+			<id>28</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 29">
+			<id>29</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 30">
+			<id>30</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 31">
+			<id>31</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 32">
+			<id>32</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 33">
+			<id>33</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 34">
+			<id>34</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 35">
+			<id>35</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 36">
+			<id>36</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 37">
+			<id>37</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 38">
+			<id>38</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 39">
+			<id>39</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 40">
+			<id>40</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 41">
+			<id>41</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 42">
+			<id>42</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 43">
+			<id>43</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 44">
+			<id>44</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 45">
+			<id>45</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 46">
+			<id>46</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 47">
+			<id>47</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 48">
+			<id>48</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 49">
+			<id>49</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+		<GM-event name="Event 50">
+			<id>50</id>
+			<description>A standard description for testing.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes</GM-option>
+				<GM-option>No</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+	</GM-events>
+</Guess-Market>

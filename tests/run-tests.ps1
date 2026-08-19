@@ -262,6 +262,75 @@ Test-Case "F5  loading a state file that does not exist is handled" `
 }
 
 Write-Host ""
+Write-Host "=== G. Schema-valid files the grader may throw at us ===" -ForegroundColor Cyan
+
+$edge = Join-Path $repo "test-files\edge"
+
+# Files that are legal application-wise and must load.
+$mustLoad = @{
+    "ok-commission-0.xml"  = "commission of exactly 0 is allowed"
+    "ok-commission-90.xml" = "commission of exactly 90 is allowed"
+    "ok-b-1.xml"           = "the smallest liquidity value is allowed"
+    "ok-large-b.xml"       = "a very large liquidity value is allowed"
+    "ok-negative-id.xml"   = "a negative event id is still a unique id"
+    "ok-special-chars.xml" = "quotes and ampersands in names survive"
+    "ok-long-text.xml"     = "a very long description is handled"
+    "ok-50-events.xml"     = "fifty events load and list"
+}
+foreach ($file in ($mustLoad.Keys | Sort-Object)) {
+    Test-Case ("G+  " + $mustLoad[$file]) @("1", (Join-Path $edge $file), "2", "6") @{
+        must = @("valid and loaded successfully"); mustNot = @("Error:", "Infinity", "NaN")
+    }
+}
+
+# Files that break an application rule. Each must be refused with a message
+# that names the offending event, not just "the file is invalid".
+$mustReject = @{
+    "bad-commission-91.xml"        = @("commission", "91")
+    "bad-commission-neg.xml"       = @("commission", "-1")
+    "bad-b-zero.xml"               = @("Zero B", "b=0")
+    "bad-b-negative.xml"           = @("Negative B", "b=-50")
+    "bad-one-option.xml"           = @("Single Option", "exactly 2 options")
+    "bad-identical-options.xml"    = @("Same Twice", "twice")
+    "bad-empty-option.xml"         = @("Blank Option", "empty option name")
+    "bad-empty-description.xml"    = @("No Description", "no description")
+    "bad-empty-name.xml"           = @("no name")
+    "bad-duplicate-id.xml"         = @("Duplicate event id 4", "First Event", "Second Event")
+    "bad-duplicate-id-far-apart.xml" = @("Duplicate event id 1", "Alpha", "Delta")
+    "bad-second-event-invalid.xml" = @("Broken One", "200")
+}
+foreach ($file in ($mustReject.Keys | Sort-Object)) {
+    Test-Case ("G-  " + $file + " is refused, and says why") `
+        @("1", (Join-Path $edge $file), "6") @{
+        must = @("Error:") + $mustReject[$file]
+        mustNot = @("loaded successfully")
+    }
+}
+
+# The bad event sits second in the file, so a partial load would still show the
+# first event. Nothing at all may survive a rejected file.
+Test-Case "G!  a file rejected on its second event loads nothing at all" `
+    @("1", (Join-Path $edge "bad-second-event-invalid.xml"), "2", "6") @{
+    must = @("No system file is currently loaded")
+    mustNot = @("Perfectly Fine")
+}
+
+Test-Case "G!  b=1 with a large purchase stays finite" `
+    @("1", (Join-Path $edge "ok-b-1.xml"), "4", "1", "1", "1000", "3", "1", "6") @{
+    must = @("1049.27"); mustNot = @("Infinity", "NaN")
+}
+
+Test-Case "G!  90% commission is charged correctly" `
+    @("1", (Join-Path $edge "ok-commission-90.xml"), "4", "1", "1", "100", "6") @{
+    must = @("55.81", "117.82"); mustNot = @()
+}
+
+Test-Case "G!  0% commission charges nothing extra" `
+    @("1", (Join-Path $edge "ok-commission-0.xml"), "4", "1", "1", "100", "6") @{
+    must = @("62.01"); mustNot = @()
+}
+
+Write-Host ""
 Write-Host ("=" * 60)
 if ($script:fail -eq 0) {
     Write-Host ("ALL TESTS PASSED  ({0}/{0})" -f $script:pass) -ForegroundColor Green

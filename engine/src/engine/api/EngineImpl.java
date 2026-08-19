@@ -153,7 +153,8 @@ public class EngineImpl implements Engine {
         if (jaxbEvent.getOptions() == null || jaxbEvent.getOptions().getOptionList().size() != OPTIONS_PER_EVENT) {
             int found = (jaxbEvent.getOptions() == null) ? 0 : jaxbEvent.getOptions().getOptionList().size();
             throw new InvalidFileException("Event '" + eventName + "' (id " + jaxbEvent.getId()
-                    + ") must have exactly " + OPTIONS_PER_EVENT + " options, but " + found + " were found.");
+                    + ") must have exactly " + OPTIONS_PER_EVENT + " options, but "
+                    + found + (found == 1 ? " was" : " were") + " found.");
         }
 
         List<String> optionNames = new ArrayList<>();

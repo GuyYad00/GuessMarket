@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Guess-Market xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="GM-EX1-schema.xsd">
+	<GM-events>
+		<GM-event name="Symbols">
+			<id>1</id>
+			<description>Quotes &apos;single&apos; and &quot;double&quot;, ampersand &amp;, math &lt; &gt;.</description>
+			<comision type="on-purchase">5</comision>
+			<GM-options>
+				<GM-option>Yes &amp; maybe</GM-option>
+				<GM-option>No &lt; never</GM-option>
+			</GM-options>
+			<GM-method>
+				<GM-LMSR>
+					<b>100</b>
+				</GM-LMSR>
+			</GM-method>
+		</GM-event>
+	</GM-events>
+</Guess-Market>
