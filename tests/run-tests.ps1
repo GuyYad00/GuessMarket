@@ -286,6 +286,28 @@ Test-Case "F5  loading a state file that does not exist is handled" `
     must = @("Error:"); mustNot = @()
 }
 
+Test-Case "F6  saving to a bare file name works (adds .gm)" `
+    @("1", $valid3, "4", "1", "1", "50", "7", (Join-Path $sandbox "barename"), "6") @{
+    must = @("saved"); mustNot = @("Error:")
+}
+Test-Case "F6b bare-name save is reloadable" @() @{ must = @(); mustNot = @() }
+if (Test-Path (Join-Path $sandbox "barename.gm")) {
+    Write-Host "  [PASS] F6b bare-name save produced barename.gm" -ForegroundColor Green
+    $script:pass++
+} else {
+    Write-Host "  [FAIL] F6b expected barename.gm" -ForegroundColor Red; $script:fail++
+}
+
+Test-Case "F7  saving to a path that contains spaces works" `
+    @("1", $valid3, "7", (Join-Path $sandbox "my saved game"), "6") @{
+    must = @("saved"); mustNot = @("Error:")
+}
+
+Test-Case "F8  saving before any file is loaded is refused, not crash" `
+    @("7", "whatever", "6") @{
+    must = @("No system file is currently loaded"); mustNot = @()
+}
+
 Write-Host ""
 Write-Host "=== G. Schema-valid files the grader may throw at us ===" -ForegroundColor Cyan
 
